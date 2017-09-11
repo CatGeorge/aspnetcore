@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using YoyocmsSchool.Models;
+using YoYocmsSchool.Models;
 
-namespace YoyocmsSchool.Controllers
+namespace YoYocmsSchool.Controllers
 {
     public class HomeController : Controller
     {

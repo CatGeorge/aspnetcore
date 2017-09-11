@@ -1,6 +1,6 @@
 using System;
 
-namespace YoyocmsSchool.Models
+namespace YoYocmsSchool.Models
 {
     public class ErrorViewModel
     {
