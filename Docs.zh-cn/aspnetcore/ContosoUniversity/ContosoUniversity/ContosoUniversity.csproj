@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\PublishProfiles\ContosoUniversity20171029012409 - Web Deploy.pubxml" />
     <None Remove="Properties\PublishProfiles\ContosoUniversity20171029101752 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\mvpsso - Web Deploy.pubxml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +24,10 @@
 
   <ItemGroup>
     <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>
