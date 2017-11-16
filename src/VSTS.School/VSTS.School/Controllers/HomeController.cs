@@ -17,14 +17,14 @@ namespace VSTS.School.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "www.52abp.com";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "如何联系我们？看下面";
 
             return View();
         }
