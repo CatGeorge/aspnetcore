@@ -1,6 +1,4 @@
-using System;
-
-namespace VSTS.School.Models
+namespace VSTS.School.ViewModels
 {
     public class ErrorViewModel
     {
