@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VSTS.School.Core.Models
 {
@@ -7,6 +8,7 @@ namespace VSTS.School.Core.Models
     /// </summary>
     public class Course
     {
+       // [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CourseId { get; set; }
 
         public string Title { get; set; }

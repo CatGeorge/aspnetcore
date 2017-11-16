@@ -11,10 +11,10 @@ namespace VSTS.School.EntityFramework
         {
             context.Database.EnsureCreated();
 
-            // Look for any students.
+            // 检查是否有学生信息
             if (context.Students.Any())
             {
-                return;   // DB has been seeded
+                return;   //返回，不执行。
             }
 
             var students = new Student[]
