@@ -14,8 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Application\Dtos\" />
-    <Folder Include="EntityFramework\" />
-    <Folder Include="Application\" />
   </ItemGroup>
 
 </Project>

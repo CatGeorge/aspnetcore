@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VSTS.School.Models
+namespace VSTS.School.Core.Models
 {
     /// <summary>
     /// 学生
