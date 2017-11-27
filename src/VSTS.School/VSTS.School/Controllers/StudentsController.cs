@@ -84,22 +84,17 @@ namespace VSTS.School.Controllers
         // POST: Students/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ActionName("Edit")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditPost(int? id)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,EnrollmentDate,FirstMidName,LastName")] Student student)
         {
-            if (id == null)
+            if (id != student.Id)
             {
                 return NotFound();
             }
-            var studentToUpdate = await _context.Students.SingleOrDefaultAsync(s => s.Id == id);
-            if (await TryUpdateModelAsync<Student>(
-                studentToUpdate,
-                "",
-                s => s.RealName, s => s.EnrollmentDate))
+            if (ModelState.IsValid)
             {
                 try
                 {
+                    _context.Update(student);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
@@ -111,22 +106,29 @@ namespace VSTS.School.Controllers
                                                  "see your system administrator.");
                 }
             }
-            return View(studentToUpdate);
+            return View(student);
         }
         // GET: Students/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var student = await _context.Students
+            var student = await _context.Students.AsNoTracking()
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (student == null)
             {
                 return NotFound();
             }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
+            }
+
 
             return View(student);
         }
